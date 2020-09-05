@@ -45,9 +45,9 @@ def weekly_unsigned():
 		smtp.ehlo()
 		smtp.starttls()
 		smtp.ehlo()
-		gmail_password = "emH-c8w-nQy-cPc"
-		smtp.login("geronimo.joaquin.alonso@gmail.com", gmail_password)
-		smtp.sendmail("geronimo.joaquin.alonso@gmail.com", "commercial@ibericmalls.com", msg)
+		gmail_password = "Vu8?me!raGa7"
+		smtp.login("board@ibericmalls.com", gmail_password)
+		smtp.sendmail("board@ibericmalls.com", "commercial@ibericmalls.com", msg)
 		print("Reminder Sent")
 
 
