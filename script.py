@@ -5,7 +5,6 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
 from webdriver_manager.chrome import ChromeDriverManager
-import os
 
 
 def weekly_unsigned():
@@ -15,7 +14,7 @@ def weekly_unsigned():
 	driver.implicitly_wait(10) #set implicit wait
 	driver.get(url) #open the browser
 	print('driver selected')
-	adobe_password = os.environ.get(ADMIN_ADOBE_PASSWORD)
+	adobe_password = "Iberic1409!!!"
 	print('environment variable created')
 	login = driver.find_element_by_id("userEmail")
 	print('element found')
@@ -46,7 +45,7 @@ def weekly_unsigned():
 		smtp.ehlo()
 		smtp.starttls()
 		smtp.ehlo()
-		gmail_password = os.environ.get(GMAIL_GJA_PASSWORD)
+		gmail_password = "emH-c8w-nQy-cPc"
 		smtp.login("geronimo.joaquin.alonso@gmail.com", gmail_password)
 		smtp.sendmail("geronimo.joaquin.alonso@gmail.com", "commercial@ibericmalls.com", msg)
 		print("Reminder Sent")
