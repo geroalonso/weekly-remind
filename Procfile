@@ -1,1 +1,1 @@
-worker: python script.py
+clock: python script.py

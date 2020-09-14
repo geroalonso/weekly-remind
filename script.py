@@ -1,4 +1,4 @@
-import schedule
+from apscheduler.schedulers.blocking import BlockingScheduler
 import time
 import smtplib
 from selenium import webdriver
@@ -7,8 +7,12 @@ from selenium.webdriver.support.ui import Select
 from webdriver_manager.chrome import ChromeDriverManager
 
 
-def weekly_unsigned():
-	url = "https://buildium.na2.echosign.com/public/login"
+
+sched = BlockingScheduler()
+
+@sched.scheduled_job('cron', day_of_week='mon', hour=17)
+def scheduled_job():
+		url = "https://buildium.na2.echosign.com/public/login"
 	print('url defined')
 	driver = webdriver.Chrome(ChromeDriverManager().install()) #set the search engine
 	driver.implicitly_wait(10) #set implicit wait
@@ -49,12 +53,7 @@ def weekly_unsigned():
 		smtp.login("board@ibericmalls.com", gmail_password)
 		smtp.sendmail("board@ibericmalls.com", "commercial@ibericmalls.com", msg)
 		print("Reminder Sent")
+    
 
-
-schedule.every(10).seconds.do(weekly_unsigned)
-schedule.every().monday.at("06:00").do(weekly_unsigned)
-
-
-while True:
-	schedule.run_pending()
+sched.start()
 
