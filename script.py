@@ -12,8 +12,7 @@ sched = BlockingScheduler()
 
 @sched.scheduled_job('cron', day_of_week='mon', hour=17)
 def scheduled_job():
-		url = "https://buildium.na2.echosign.com/public/login"
-	print('url defined')
+	url = "https://buildium.na2.echosign.com/public/login"
 	driver = webdriver.Chrome(ChromeDriverManager().install()) #set the search engine
 	driver.implicitly_wait(10) #set implicit wait
 	driver.get(url) #open the browser
