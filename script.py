@@ -9,8 +9,9 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 
 sched = BlockingScheduler()
-
-@sched.scheduled_job('cron', day_of_week='mon', hour=17)
+'interval', minutes=3
+# @sched.scheduled_job('cron', day_of_week='mon', hour=17)
+@sched.scheduled_job('interval', minutes=3)
 def scheduled_job():
 	url = "https://buildium.na2.echosign.com/public/login"
 	driver = webdriver.Chrome(ChromeDriverManager().install()) #set the search engine
