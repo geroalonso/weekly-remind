@@ -5,7 +5,7 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
 from webdriver_manager.chrome import ChromeDriverManager
-import os 
+
 
 
 
@@ -50,7 +50,7 @@ def scheduled_job():
 		smtp.ehlo()
 		smtp.starttls()
 		smtp.ehlo()
-		gmail_password = str(os.environ.get(EMAIL_PASSWORD))
+		gmail_password = 'Vu8?me!raGa7'
 		smtp.login("board@ibericmalls.com", gmail_password)
 		smtp.sendmail("board@ibericmalls.com", "commercial@ibericmalls.com", msg)
 		print("Reminder Sent")
