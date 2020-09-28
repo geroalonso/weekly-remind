@@ -19,7 +19,7 @@ def scheduled_job():
 	driver.implicitly_wait(10) #set implicit wait
 	driver.get(url) #open the browser
 	print('driver selected')
-	adobe_password = "Iberic1409!!!"
+	adobe_password = ""
 	print('environment variable created')
 	login = driver.find_element_by_id("userEmail")
 	print('element found')
@@ -50,7 +50,7 @@ def scheduled_job():
 		smtp.ehlo()
 		smtp.starttls()
 		smtp.ehlo()
-		gmail_password = 'Vu8?me!raGa7'
+		gmail_password = ''
 		smtp.login("board@ibericmalls.com", gmail_password)
 		smtp.sendmail("board@ibericmalls.com", "commercial@ibericmalls.com", msg)
 		print("Reminder Sent")
