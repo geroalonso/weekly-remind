@@ -14,12 +14,12 @@ from apscheduler.schedulers.blocking import BlockingScheduler
 sched = BlockingScheduler()
 
 
-@sched.scheduled_job('cron', hour=17)
+@sched.scheduled_job('cron', hour=20)
 def timed_job():
 	url = "https://rest.tsheets.com/api/v1/timesheets"
 
 	querystring = {
-	   "start_date": str((datetime.today() - timedelta(days=1)).strftime('%Y-%m-%d')),
+	   "start_date": str(datetime.today()),
 	}
 
 	payload = ""
